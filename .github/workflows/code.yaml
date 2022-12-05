@@ -1,9 +1,10 @@
 name: eval_3
 on:
-push:
-pull_request:
-branches:
-– main
+  push:
+
+  pull_request:
+    branches:
+      - main
 
 jobs:
 build:
