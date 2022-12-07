@@ -7,15 +7,17 @@ const Navbar = () => {
 
  
   return (
-    <div className=' bg-slate-700 flex items-center place-content-around p-2'>
-    <ul className='flex   w-2/4 place-content-between'>
-       <Link href="/"  className='text-slate-300 font-bold text-2xl  hover:text-violet-500'><li>Home</li></Link> 
-       <Link href="/projects" className='text-slate-300 font-bold text-2xl  hover:text-violet-500'><li>Projects</li></Link> 
-       <Link href="/education" className='text-slate-300 font-bold text-2xl  hover:text-violet-500'><li>Eduction</li></Link> 
-       <Link href="/skills" className='text-slate-300 font-bold text-2xl  hover:text-violet-500'><li>Skills</li></Link> 
+    <div className='flex items-center p-2 bg-slate-700 place-content-around'>
+    <ul className='flex w-2/4 place-content-between'>
+       <Link href="/"  className='text-2xl font-bold text-slate-300 hover:text-violet-500'><li>Home</li></Link> 
+       <Link href="/projects" className='text-2xl font-bold text-slate-300 hover:text-violet-500'><li>Projects</li></Link> 
+       <Link href="/education" className='text-2xl font-bold text-slate-300 hover:text-violet-500'><li>Eduction</li></Link> 
+       <Link href="/skills" className='text-2xl font-bold text-slate-300 hover:text-violet-500'><li>Skills</li></Link> 
     </ul>
+    
+    <Image src="https://avatars.githubusercontent.com/u/107991675?v=4" height="50" width="50" alt="img" priority className='rounded-full bg-slate-400'/>
 
-   <Image width="100" height="100" className='w-10 bg-slate-400 rounded-full' src="https://avatars.githubusercontent.com/u/107991675?v=4" alt="img" />
+
 
     </div>
   )

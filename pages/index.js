@@ -71,26 +71,25 @@ export default function Home({data}) {
  
 
 
-      <div className='border-2 w-1/4 p-2 flex items-center justify-center'>
+      <div className='flex items-center justify-center w-1/4 p-2 border-2'>
 
       <div className=''>
-          <div className=' border-5-red-400  '>
+          <div className=' border-5-red-400'>
 
-          <Image src={avatar_url}  alt={avatar_url}   width="100" height="100" className="bg-slate-400 w-32 mb-3  rounded-full" />
 
-         
-          <h2 className='text-slate-300 font-bold'>{name}</h2>
-          <h3 className='text-slate-300 font-bold  mb-5 '>@{login}</h3>
+         <Image priority src={avatar_url} height="100" width="100" alt="img" className='rounded-full bg-slate-400'/>
+          <h2 className='font-bold text-slate-300'>{name}</h2>
+          <h3 className='mb-5 font-bold text-slate-300 '>@{login}</h3>
           </div>
           <div className='text-slate-300 '>
-          <h3 className='w-44  mb-5 '>
+          <h3 className='mb-5 w-44 '>
           Full-stack Developer | JavaScript | Typescript | NodeJS | ReactJS | HTML | CSS | Chakra-UI 
           </h3>
           </div>
 
-          <div className='border-2 w-full mb-2 '>
-          <button onClick={()=>window.open("https://drive.google.com/file/d/1GVAG9kDQGhyNAXwZEFUIVPMSE_PJ-umW/view?usp=sharing")} className='bg-red-400 px-8 py-2 rounded-full font-bold text-white hover:bg-lime-300'>Resume</button>
-          <button onClick={()=>window.open("https://github.com/santoshy1101")} className='bg-violet-400 px-8 py-2 rounded-full font-bold text-white hover:bg-blue-300'>Follow</button>
+          <div className='w-full mb-2 border-2 '>
+          <button onClick={()=>window.open("https://drive.google.com/file/d/1GVAG9kDQGhyNAXwZEFUIVPMSE_PJ-umW/view?usp=sharing")} className='px-8 py-2 font-bold text-white bg-red-400 rounded-full hover:bg-lime-300'>Resume</button>
+          <button onClick={()=>window.open("https://github.com/santoshy1101")} className='px-8 py-2 font-bold text-white rounded-full bg-violet-400 hover:bg-blue-300'>Follow</button>
           </div>
       </div>
       
@@ -98,10 +97,10 @@ export default function Home({data}) {
 
 
 
-      <div className='w-1/4 grid grid-cols-2 gap-4 text-center my-8 border-4 p-8'>
+      <div className='grid w-1/4 grid-cols-2 gap-4 p-8 my-8 text-center border-4'>
       {
         tech.map(({id,tec})=>(
-          <div key={id} className='px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2'>{tec}</div>
+          <div key={id} className='px-4 py-1 text-sm font-semibold text-purple-600 border border-purple-200 rounded-full hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2'>{tec}</div>
 
         ))
       }
@@ -111,15 +110,15 @@ export default function Home({data}) {
 
 
 
-      <div className='border-2 w-1/4 p-8'>
+      <div className='w-1/4 p-8 border-2'>
       {
         exp.map(({id,ex,time})=>(
           <div key={id}>
-          <div className='flex space-x-4 my-5 px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2' >
+          <div className='flex px-4 py-1 my-5 space-x-4 text-sm font-semibold text-purple-600 border border-purple-200 rounded-full hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2' >
        
       
       
-          <div className='text-white p-2 rounded-full bg-green-400'>{id}</div>
+          <div className='p-2 text-white bg-green-400 rounded-full'>{id}</div>
             <div>
             <h2>{ex}</h2>
             <h3>{time}</h3>
@@ -138,7 +137,7 @@ export default function Home({data}) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function  getServerSideProps(context) {
   const res = await fetch('https://api.github.com/users/santoshy1101')
   const data = await res.json()
   return {
